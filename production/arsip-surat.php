@@ -1,4 +1,11 @@
 <?php 
+// Validasi Login agar file tidak dapat diakses sebelum melakukan Login Terlebih dahulu
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("location:../index.php");
+}
+
+
 include "koneksi.php";
 include "../layout/header.php";
 

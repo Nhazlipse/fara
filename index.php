@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>BPKAD Login</title>
+    <title>E-Arsip | PLN</title>
 
     <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -38,9 +38,9 @@
     
 <form class="form-signin" method="post" action="cek_login.php">
   <div class="text-center mb-4">
-    <img class="mb-4" src="assets/Logo BPKAD.png" width="120" height="120">
-    <h1 class="h3 mb-3 font-weight-normal">Login BPKAD</h1>
-    <p>Silahkan masukkan username dan password anda, sebelum masuk ke dalam sistem E-arsip BPKAD</p>
+    <img class="mb-4" src="assets/Logo PLN.png" width="130" height="185">
+    <h1 class="h3 mb-3 font-weight-normal">Login E-Arsip | PLN</h1>
+    <p>Silahkan masukkan username dan password anda, sebelum masuk ke dalam sistem E-Arsip PLN Kota Kediri</p>
   </div>
 
   <div class="form-label-group">
@@ -59,7 +59,7 @@
     </label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted text-center">&copy; BPKAD 2023-<?=date('Y')?> by.Syifa Fauziah & Tiara Savana</p>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; PLN Kota Kediri 2023-<?=date('Y')?></p>
 </form>
 
 

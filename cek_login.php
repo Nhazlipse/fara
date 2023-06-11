@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneksi.php";
+include "./production/koneksi.php";
 
 //contoh login sederhana,bisa dikembangkan lagi
 
@@ -18,7 +18,7 @@ if($data)
 {
     $_SESSION['id_user'] = $data['id_user'];
     $_SESSION['username'] = $data['username'];
-    header('location:admin.php');
+    header('location:./production/dashboard.php');
 
 }
 else
