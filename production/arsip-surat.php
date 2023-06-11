@@ -14,7 +14,7 @@ include "../layout/header.php";
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="dashboard.php" class="site_title"><i class="fa fa-graduation-cap"></i> <span>Beasiswa WP</span></a>
+              <a href="dashboard.php" class="site_title"><i class="fa fa-bolt" style="color: #ffffff;"></i></i> <span>E-Arsip | PLN</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -22,7 +22,7 @@ include "../layout/header.php";
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/1.png" alt="..." class="img-circle profile_img">
+                <img src="images/3.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -45,13 +45,13 @@ include "../layout/header.php";
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="alternatif_kriteria.php">Data Alternatif dan Kriteria</a></li>
-                      <li><a href="bobot.php">Data Bobot dan Kriteria</a></li>
+                      <li><a href="instansi.php">Data Instansi</a></li>
+                      <li><a href="data-pengirim.php">Data Pengirim Surat</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> Perhitungan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-desktop"></i>Arsip Surat <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="perhitungan.php">Hasil</a></li>
+                      <li><a href="arsip-surat.php">Data</a></li>
                     </ul>
                   </li>
                 
@@ -75,10 +75,10 @@ include "../layout/header.php";
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/1.png" alt="">Administrator
+                    <img src="images/3.png" alt="">Administrator
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="../logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
 
@@ -161,11 +161,12 @@ include "../layout/header.php";
 </div>
   <h6 class="inverted-hide my-3" style="text-align: center;">Laporan Data Arsip Surat</h6>
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white hide">
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
      Data Arsip Surat
-  </div>
+</div>
+
   <div class="card-body">
-  <a href="tambah-data.php" class="btn btn-warning mb-3 hide">Tambah Data</a>
+  <a href="tambah-data.php" class="btn btn-primary mb-3 hide">Tambah Data</a>
 
     <!-- <table class="table table-borderd table-hovered table-striped "> -->
  

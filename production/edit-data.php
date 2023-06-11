@@ -180,9 +180,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- Form Edit Data -->
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white">
-    Form Edit Data Arsip Surat
-  </div>
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
+     Edit Data Arsip Surat
+</div>
+
   <div class="card-body">
     <form method="post" action="" enctype="multipart/form-data">
       <div class="form-group">
