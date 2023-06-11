@@ -184,7 +184,7 @@ include "../layout/header.php";
 
 
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white ">
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
     Form Data Pengirim Surat
   </div>
   <div class="card-body">
@@ -216,7 +216,7 @@ include "../layout/header.php";
 </div>
 
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white ">
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
      Data Pengirim Surat
   </div>
   <div class="card-body">

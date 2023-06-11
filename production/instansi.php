@@ -161,13 +161,13 @@ include "../layout/header.php";
 
 
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white ">
-    Form Data Departemen
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
+    Form Data Instansi
   </div>
   <div class="card-body">
   <form method="post" action="">
   <div class="form-group">
-    <label for="nama_departemen">Nama Departemen</label>
+    <label for="nama_departemen">Nama Instansi</label>
     <input type="text" class="form-control" id="nama_departemen" name="nama_departemen" value="<?=@$vnama_departemen?>">
   </div>
   <button type="submit" name="bsimpan" class="btn btn-primary mt-3">Simpan</button>
@@ -177,14 +177,14 @@ include "../layout/header.php";
 </div>
 
 <div class="card mt-3">
-  <div class="card-header bg-warning text-white ">
-     Data Departemen
+<div class="card-header text-white hide" style="background-color: #2a3f54;">
+     Data Instansi
   </div>
   <div class="card-body">
     <table class="table table-borderd table-hovered table-striped">
         <tr>
             <th>No</th>
-            <th>Nama Departemen</th>
+            <th>Nama Instansi</th>
             <th>Aksi</th>
         </tr>
         <?php
