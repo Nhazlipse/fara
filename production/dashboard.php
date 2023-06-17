@@ -2,6 +2,13 @@
 include "koneksi.php";
 include "../layout/header.php";
 
+
+$sql = mysqli_query($koneksi, "SELECT * FROM tbl_arsip");
+$sql2 = mysqli_query($koneksi, "SELECT * FROM tbl_departemen");
+$sql3 = mysqli_query($koneksi, "SELECT * FROM tbl_pengirim_surat");
+$jumlahdata_arsip = mysqli_num_rows($sql);
+$jumlahdata_departemen = mysqli_num_rows($sql2);
+$jumlahdata_surat = mysqli_num_rows($sql3);
 ?>
 
     <!-- Custom Theme Style -->
@@ -105,25 +112,25 @@ include "../layout/header.php";
               <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 ">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
-                  <div class="count"></div>
-                  <h3>Jumlah Alternatif</h3>
-                  <p> <a href="alternatif_kriteria.php" class="small-box-footer">Lihat Data<i></i></a></P>
+                  <div class="count"><?= $jumlahdata_arsip; ?></div>
+                  <h3>Jumlah Surat Arsip</h3>
+                  <p> <a href="arsip-surat.php" class="small-box-footer">Lihat Data<i></i></a></P>
                 </div>
               </div>
               <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 ">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-comments-o"></i></div>
-                  <div class="count"></div>
-                  <h3>Data Bobot dan Kriteria</h3>
-                  <p> <a href="bobot.php" class="small-box-footer">Lihat Data<i></i></a></P>
+                  <div class="count"><?= $jumlahdata_departemen; ?></div>
+                  <h3>Jumlah Departemen</h3>
+                  <p> <a href="instansi.php" class="small-box-footer">Lihat Data<i></i></a></P>
                 </div>
               </div>
               <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 ">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-                  <div class="count">Hasil</div>
-                  <h3>Perhitungan WP</h3>
-                  <p> <a href="perhitungan.php" class="small-box-footer">Lihat Data<i></i></a></P>
+                  <div class="count"><?= $jumlahdata_surat; ?></div>
+                  <h3>Data Pengirim</h3>
+                  <p> <a href="data-pengirim.php" class="small-box-footer">Lihat Data<i></i></a></P>
                 </div>
               </div>
             </div>

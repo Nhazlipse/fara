@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/123.png" type="image/ico" />
 
-    <title>Beasiswa WP</title>
+    <title>E-Arsip Kota Kediri</title>
  
  <!-- Bootstrap -->
  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
