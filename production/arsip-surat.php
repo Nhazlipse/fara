@@ -177,7 +177,7 @@ include "../layout/header.php";
 
     <!-- <table class="table table-borderd table-hovered table-striped "> -->
  
-    <a href="#" onclick="window.print();" class="btn btn-success mb-3 hide" >Cetak Data</a>
+    <!-- <a href="#" onclick="window.print();" class="btn btn-success mb-3 hide" >Cetak Data</a> -->
 
     <a href=""></a>
     <!-- <table class="table table-borderd table-hovered table-striped"> -->
@@ -185,12 +185,11 @@ include "../layout/header.php";
     <table class="table table-borderd table-hovered table-striped">
         <tr>
             <th>No</th>
-            <th>No Surat</th>
-            <th>Tanggal Surat</th>
-            <th>Tanggal Diterima</th>
-            <th>Perihal</th>
-            <th>Departemen</th>
-            <th>Pengirim</th>
+            <th>No RKS</th>
+            <th>Tanggal</th>
+            <th>No Pekerjaan</th>
+            <th>No SPK</th>
+            <th>Tanggal SPK</th>
             <th class="hide">File</th>
             <th class="hide">Aksi</th>
         
@@ -213,10 +212,9 @@ include "../layout/header.php";
             <td><?=$no++?></td>
             <td><?=$data['no_surat']?></td>
             <td><?=$data['tanggal_surat']?></td>
-            <td><?=$data['tanggal_diterima']?></td>
             <td><?=$data['perihal']?></td>
             <td><?=$data['nama_departemen']?></td>
-            <td><?=$data['nama_pengirim']?> / <?=$data['no_hp']?> </td>
+            <td><?=$data['tanggal_diterima']?></td> / <?=$data['no_hp']?> </td>
             <td class="hide">
               <?php
                 //uji apakah file nya ada atau tidak 

@@ -11,23 +11,53 @@ include "./production/koneksi.php";
 @$username = mysqli_escape_string($koneksi, $_POST['username']);
 @$password = mysqli_escape_string($koneksi, $pass);
 
-$login = mysqli_query($koneksi, "SELECT * from tbl_user WHERE username='$username' and password = '$password'");
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+        // Jika captcha response tidak kosong
+        $captcha = $_POST['g-recaptcha-response'];
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => '6LfHIrIkAAAAACdbYQDpJocuyEAIgSBPSC1lrWaI',
+            'response' => $captcha
+        ];
+        $options = [
+            'http' => [
+                'header' => 'Content-type: application/x-www-form-urlencoded',
+                'method' => 'POST',
+                'content' => http_build_query($data)
+            ]
+        ];
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $response = json_decode($result);
 
-$data = mysqli_fetch_array($login);
-if($data) 
-{
-    $_SESSION['id_user'] = $data['id_user'];
-    $_SESSION['username'] = $data['username'];
-    header('location:./production/dashboard.php');
-
-}
-else
-{
-    echo "<script>
-            alert('Maaf, Login GAGAL, pastikan username dan password anda Benar..!');
+        if ($response->success) {
+            $login = mysqli_query($koneksi, "SELECT * from tbl_user WHERE username='$username' and password = '$password'");
+            $data = mysqli_fetch_array($login);
+            
+            if ($data) {
+                $_SESSION['id_user'] = $data['id_user'];
+                $_SESSION['username'] = $data['username'];
+                header('location:./production/dashboard.php');
+            } else {
+                echo "<script>
+                    alert('Maaf, Login GAGAL, pastikan username dan password anda Benar..!');
+                    document.location='index.php';
+                </script>";
+            }
+        } else {
+            // Jika captcha tidak valid
+            echo "<script>
+                alert('Captcha tidak valid');
+                document.location='index.php';
+            </script>";
+        }
+    } else {
+        // Jika captcha response kosong
+        echo "<script>
+            alert('Silahkan isi captcha');
             document.location='index.php';
-    </script>";
-
+        </script>";
+    }
 }
-
 ?>

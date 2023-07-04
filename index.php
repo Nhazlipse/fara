@@ -33,6 +33,11 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/floating-labels.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeKH7IkAAAAAHehEYcO9Gr3KwbdZDgo28q6Rv3S"></script>
   </head>
   <body>
     
@@ -58,6 +63,8 @@
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
+  <div class="g-recaptcha" data-sitekey="6LfHIrIkAAAAAPf_-i9ZdxJeTH5yakwM1Wn9quZB"></div>
+                                        <br>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <p class="mt-5 mb-3 text-muted text-center">&copy; PLN Kota Kediri 2023-<?=date('Y')?></p>
 </form>
