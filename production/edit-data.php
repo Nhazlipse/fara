@@ -47,7 +47,7 @@ include "../config/function.php";
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="instansi.php">Data Instansi</a></li>
-                      <li><a href="data-pengirim.php">Data Pengirim Surat</a></li>
+                      <li><a href="data-pengirim.php">Data Vendor</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i>Arsip Surat <span class="fa fa-chevron-down"></span></a>
