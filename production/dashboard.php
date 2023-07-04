@@ -117,14 +117,7 @@ $jumlahdata_surat = mysqli_num_rows($sql3);
                   <p> <a href="arsip-surat.php" class="small-box-footer">Lihat Data<i></i></a></P>
                 </div>
               </div>
-              <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 ">
-                <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-comments-o"></i></div>
-                  <div class="count"><?= $jumlahdata_departemen; ?></div>
-                  <h3>Jumlah Departemen</h3>
-                  <p> <a href="instansi.php" class="small-box-footer">Lihat Data<i></i></a></P>
-                </div>
-              </div>
+
               <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 ">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>

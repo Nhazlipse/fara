@@ -101,25 +101,20 @@ if(isset($_GET['id_arsip'])) {
   $id_arsip = $_GET['id_arsip'];
 
   // Query untuk mendapatkan data arsip berdasarkan id_arsip
-  $query = "SELECT tbl_arsip.*, tbl_departemen.nama_departemen, tbl_pengirim_surat.nama_pengirim, tbl_pengirim_surat.no_hp
-            FROM tbl_arsip
-            INNER JOIN tbl_departemen ON tbl_arsip.id_departemen = tbl_departemen.id_departemen
-            INNER JOIN tbl_pengirim_surat ON tbl_arsip.id_pengirim = tbl_pengirim_surat.id_pengirim_surat
-            WHERE tbl_arsip.id_arsip = '$id_arsip'";
+// $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_arsip");
+
+  $query = "SELECT * FROM tbl_arsip";
   $result = mysqli_query($koneksi, $query);
   $data = mysqli_fetch_assoc($result);
 
   // Pengecekan apakah data ditemukan
   if ($data) {
-    $vno_surat = $data['no_surat'];
-    $vtanggal_surat = $data['tanggal_surat'];
-    $vtanggal_diterima = $data['tanggal_diterima'];
-    $vperihal = $data['perihal'];
-    $vid_departemen = $data['id_departemen'];
-    $vnama_departemen = $data['nama_departemen'];
-    $vid_pengirim = $data['id_pengirim'];
-    $vnama_pengirim = $data['nama_pengirim'];
-    $vfile = $data['file'];
+    $vno_surat= $data['no_surat'];
+      $vtanggal_surat = $data['tanggal_surat'];
+      $vtanggal_diterima = $data['tanggal_diterima'];
+      $vperihal = $data['perihal'];
+      $vno_spk = $data['no_spk'];
+      $vfile = $data['file'];
   } else {
     echo "Data not found.";
     exit;
@@ -135,8 +130,7 @@ if(isset($_POST['bsimpan'])) {
   $tanggal_surat = $_POST['tanggal_surat'];
   $tanggal_diterima = $_POST['tanggal_diterima'];
   $perihal = $_POST['perihal'];
-  $id_departemen = $_POST['id_departemen'];
-  $id_pengirim = $_POST['id_pengirim'];
+  $vno_spk = $_POST['no_spk'];
   $file = $_FILES['file'];
 
 // Jika form disubmit
@@ -207,29 +201,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <div class="form-group">
-        <label for="id_departemen">Departemen / Tujuan</label>
-        <select class="form-control" name="id_departemen">
-          <option value="<?= $vid_departemen ?>"><?= $vnama_departemen ?></option>
-          <?php
-          $tampil = mysqli_query($koneksi, "SELECT * from tbl_departemen order by nama_departemen asc");
-          while ($data = mysqli_fetch_array($tampil)) {
-            echo "<option value='$data[id_departemen]'> $data[nama_departemen]</option> ";
-          }
-          ?>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="id_pengirim">Pengirim Surat</label>
-        <select class="form-control" name="id_pengirim">
-          <option value="<?= $vid_pengirim ?>"><?= $vnama_pengirim ?></option>
-          <?php
-          $tampil = mysqli_query($koneksi, "SELECT * from tbl_pengirim_surat order by nama_pengirim asc");
-          while ($data = mysqli_fetch_array($tampil)) {
-            echo "<option value='$data[id_pengirim_surat]'> $data[nama_pengirim]</option> ";
-          }
-          ?>
-        </select>
+        <label for="no_spk">no_spk</label>
+        <input type="text" class="form-control" id="no_spk" name="no_spk" value="<?=@$vno_spk?>">
       </div>
 
       <div class="form-group">

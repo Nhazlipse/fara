@@ -131,7 +131,7 @@ include "../layout/header.php";
         //perintah simpan data baru
         //simpan data
         $simpan = mysqli_query($koneksi, "INSERT INTO tbl_pengirim_surat VALUES ('', '$_POST[nama_pengirim]', '$_POST[alamat]', 
-                                                                                     '$_POST[no_hp]', '$_POST[email]' ) ");
+                                                                                     '$_POST[no_hp]', '$_POST[direktur]', '$_POST[akta_pendirian]', '$_POST[sap_vendor]', '$_POST[npwp]' ) ");
 
         if($simpan)
         {
@@ -165,7 +165,10 @@ include "../layout/header.php";
       $vnama_pengirim = $data['nama_pengirim'];
       $valamat = $data['alamat'];
       $vno_hp = $data['no_hp'];
-      $vemail = $data['email'];
+      $vdirektur = $data['direktur'];
+      $vakta_pendirian = $data['akta_pendirian'];
+      $vsap_vendor = $data['sap_vendor'];
+      $vnpwp = $data['npwp'];
     }
     }else{
       
@@ -190,7 +193,7 @@ include "../layout/header.php";
   <div class="card-body">
   <form method="post" action="">
   <div class="form-group">
-    <label for="nama_pengirim">Nama Pengirim</label>
+    <label for="nama_pengirim">Nama Perusahaan</label>
     <input type="text" class="form-control" id="nama_pengirim" name="nama_pengirim" value="<?=@$vnama_pengirim?>">
   </div>
   
@@ -203,11 +206,27 @@ include "../layout/header.php";
     <label for="no_hp">No. Hp</label>
     <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?=@$vno_hp?>">
   </div>
-  
+
   <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" name="email" value="<?=@$vemail?>">
+    <label for="direktur">Direktur</label>
+    <input type="text" class="form-control" id="direktur" name="direktur" value="<?=@$vdirektur?>">
   </div>
+
+  <div class="form-group">
+    <label for="akta_pendirian">Akta Pendirian</label>
+    <input type="text" class="form-control" id="akta_pendirian" name="akta_pendirian" value="<?=@$vakta_pendirian?>">
+  </div>
+
+  <div class="form-group">
+    <label for="sap_vendor">Sap Vendor</label>
+    <input type="text" class="form-control" id="sap_vendor" name="sap_vendor" value="<?=@$vsap_vendor?>">
+  </div>
+
+  <div class="form-group">
+    <label for="npwp">NPWP</label>
+    <input type="text" class="form-control" id="npwp" name="npwp" value="<?=@$vnpwp?>">
+  </div>
+  
 
   <button type="submit" name="bsimpan" class="btn btn-primary mt-3">Simpan</button>
   <button type="reset" name="bbatal" class="btn btn-danger mt-3">Batal</button>
@@ -222,11 +241,16 @@ include "../layout/header.php";
   <div class="card-body">
     <table class="table table-borderd table-hovered table-striped">
         <tr>
+
+        <!-- Jupuk en ko data pengirim surat iku ae nas ngko inputan e nama, alamat, no. Telp, , direktur, no. Rekening, bank, atas nama, akta pendirian, sap vendor, npwp -->
             <th>No</th>
-            <th>Nama Pengirim Surat</th>
+            <th>Nama Perusahaan</th>
             <th>Alamat</th>
             <th>No Hp</th>
-            <th>Email</th>
+            <th>Direktur</th>
+            <th>Akta Pendirian</th>
+            <th>Sap Vendor</th>
+            <th>NPWP</th>
             <th>Aksi</th>
         </tr>
         <?php
@@ -239,7 +263,10 @@ include "../layout/header.php";
             <td><?=$data['nama_pengirim']?></td>
             <td><?=$data['alamat']?></td>
             <td><?=$data['no_hp']?></td>
-            <td><?=$data['email']?></td>
+            <td><?=$data['direktur']?></td>
+            <td><?=$data['akta_pendirian']?></td>
+            <td><?=$data['sap_vendor']?></td>
+            <td><?=$data['npwp']?></td>
             <td>
               <a href="?halaman=pengirim_surat&hal=edit&id=<?=$data['id_pengirim_surat']?>" class="btn btn-primary">Edit</a>
               <a href="?halaman=pengirim_surat&hal=hapus&id=<?=$data['id_pengirim_surat']?>" class="btn btn-danger" onclick="return confirm('apakah anda ingin menghapus data ini')">Hapus</a>

@@ -156,14 +156,6 @@ include "../layout/header.php";
 </p>  
   <div id='rectangle2' class='rectangle2'></div>
   <div id='judul_text' class='judul_text'>
-  <p class="inverted-hide">  
-  <h3 class="inverted-hide">
-      BADAN PENGELOLAAN KEUANGAN DAN ASET DAERAH
-    </h3>
-  </p>  
-    <p class="inverted-hide">
-      Jl. Aman No.1, Tengah, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16914
-    </p>
   </div>
 </div>
   <h6 class="inverted-hide my-3" style="text-align: center;">Laporan Data Arsip Surat</h6>
@@ -195,16 +187,9 @@ include "../layout/header.php";
         
         </tr>
         <?php
-            $tampil = mysqli_query($koneksi, " SELECT 
-                                               tbl_arsip.*,
-                                               tbl_departemen.nama_departemen,
-                                               tbl_pengirim_surat.nama_pengirim, tbl_pengirim_surat.no_hp
-                                               FROM 
-                                               tbl_arsip, tbl_departemen, tbl_pengirim_surat 
-                                               WHERE 
-                                               tbl_arsip.id_departemen = tbl_departemen.id_departemen
-                                               and tbl_arsip.id_pengirim = tbl_pengirim_surat.id_pengirim_surat
-                      ");
+
+            $tampil = mysqli_query($koneksi, "SELECT * FROM tbl_arsip");
+
             $no = 1;
             while($data = mysqli_fetch_array($tampil)) :
         ?>
@@ -213,8 +198,8 @@ include "../layout/header.php";
             <td><?=$data['no_surat']?></td>
             <td><?=$data['tanggal_surat']?></td>
             <td><?=$data['perihal']?></td>
-            <td><?=$data['nama_departemen']?></td>
-            <td><?=$data['tanggal_diterima']?></td> / <?=$data['no_hp']?> </td>
+            <td><?=$data['no_spk']?></td>
+            <td><?=$data['tanggal_diterima']?>
             <td class="hide">
               <?php
                 //uji apakah file nya ada atau tidak 

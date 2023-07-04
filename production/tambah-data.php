@@ -106,7 +106,7 @@ include "../layout/header.php";
     $tampil = mysqli_query($koneksi, "SELECT 
                                     tbl_arsip.*,
                                     tbl_departemen.nama_departemen,
-                                    tbl_pengirim_surat.nama_pengirim, tbl_pengirim_surat.no_hp
+                                    tbl_pengirim_surat.nama_pengirim, tbl_pengirim_surat
                                     FROM 
                                     tbl_arsip, tbl_departemen, tbl_pengirim_surat 
                                     WHERE 
@@ -122,10 +122,7 @@ include "../layout/header.php";
       $vtanggal_surat = $data['tanggal_surat'];
       $vtanggal_diterima = $data['tanggal_diterima'];
       $vperihal = $data['perihal'];
-      $vid_departemen = $data['id_departemen'];
-      $vnama_departemen = $data['nama_departemen'];
-      $vid_pengirim = $data['id_pengirim'];
-      $vnama_pengirim = $data['nama_pengirim'];
+      $vno_spk = $data['no_spk'];
       $vfile = $data['file'];
     }
     }
@@ -189,9 +186,10 @@ include "../layout/header.php";
         //perintah simpan data baru
         //simpan data
         $file = upload();
-        $simpan = mysqli_query($koneksi, "INSERT INTO tbl_arsip VALUES ('', '$_POST[no_surat]', '$_POST[tanggal_surat]', 
-                                                                            '$_POST[tanggal_diterima]', '$_POST[perihal]', 
-                                                                            '$_POST[id_departemen]', '$_POST[id_pengirim]', '$file' ) ");
+        $simpan = mysqli_query($koneksi, "INSERT INTO tbl_arsip (no_surat, tanggal_surat, tanggal_diterima, perihal, no_spk, file) 
+        VALUES ('$_POST[no_surat]', '$_POST[tanggal_surat]', '$_POST[tanggal_diterima]', 
+                '$_POST[perihal]', '$_POST[no_spk]', '$file')");
+
 
         if($simpan)
         {
@@ -245,29 +243,8 @@ include "../layout/header.php";
   </div>
 
   <div class="form-group">
-    <label for="id_departemen">Departemen / Tujuan</label>
-    <select class="form-control" name="id_departemen">
-        <option value="<?=@$vid_departemen?>"><?=@$vnama_departemen?></option>
-        <?php
-            $tampil = mysqli_query($koneksi, "SELECT * from tbl_departemen order by nama_departemen asc");
-            while($data = mysqli_fetch_array($tampil)){
-                echo "<option value = '$data[id_departemen]'> $data[nama_departemen]</option> ";
-            }
-        ?>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="id_pengirim">Pengirim Surat</label>
-    <select class="form-control" name="id_pengirim">
-        <option value="<?=@$vid_pengirim?>"><?=@$vnama_pengirim?></option>
-        <?php
-            $tampil = mysqli_query($koneksi, "SELECT * from tbl_pengirim_surat order by nama_pengirim asc");
-            while($data = mysqli_fetch_array($tampil)){
-                echo "<option value = '$data[id_pengirim_surat]'> $data[nama_pengirim]</option> ";
-            }
-        ?>
-    </select>
+    <label for="no_spk">no_spk</label>
+    <input type="text" class="form-control" id="no_spk" name="no_spk" value="<?=@$vno_spk?>">
   </div>
   
   <div class="form-group">
