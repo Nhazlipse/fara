@@ -52,7 +52,7 @@ $jumlahdata_surat = mysqli_num_rows($sql3);
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="instansi.php">Data Instansi</a></li>
+                      
                       <li><a href="data-pengirim.php">Data Vendor</a></li>
                     </ul>
                   </li>

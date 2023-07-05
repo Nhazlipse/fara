@@ -52,7 +52,7 @@ include "../layout/header.php";
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="instansi.php">Data Instansi</a></li>
+                   
                       <li><a href="data-pengirim.php">Data Vendor</a></li>
                     </ul>
                   </li>
@@ -179,7 +179,7 @@ include "../layout/header.php";
             <th>No</th>
             <th>No RKS</th>
             <th>Tanggal</th>
-            <th>No Pekerjaan</th>
+            <th>Nama Pekerjaan</th>
             <th>No SPK</th>
             <th>Tanggal SPK</th>
             <th class="hide">File</th>

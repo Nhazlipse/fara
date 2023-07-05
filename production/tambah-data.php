@@ -45,7 +45,7 @@ include "../layout/header.php";
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="instansi.php">Data Instansi</a></li>
+                      
                       <li><a href="data-pengirim.php">Data Vendor</a></li>
                     </ul>
                   </li>
@@ -154,15 +154,15 @@ include "../layout/header.php";
         }else{
             $file = upload();
         }
-        $ubah = mysqli_query($koneksi, "UPDATE tbl_arsip SET no_surat ='$_POST[no_surat]',
-                                                                      tanggal_surat = '$_POST[tanggal_surat]',
-                                                                      tanggal_diterima = '$_POST[tanggal_diterima]',
-                                                                      perihal = '$_POST[perihal]',
-                                                                      id_departemen = '$_POST[id_departemen]',
-                                                                      id_pengirim = '$_POST[id_pengirim]',
-                                                                      file = '$file'   
 
-                                                                      where id_arsip = '$_GET[id]' " );
+        $ubah = "UPDATE tbl_arsip
+        SET no_surat = '$no_surat',
+            tanggal_surat = '$tanggal_surat',
+            tanggal_diterima = '$tanggal_diterima',
+            perihal = '$perihal',
+            no_spk = '$vno_spk',
+            file = '$file_name'
+        WHERE id_arsip = '$id_arsip'";
 
         if($ubah)
         {
@@ -223,27 +223,27 @@ include "../layout/header.php";
   <div class="card-body">
   <form method="post" action="" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="no_surat">No. Surat</label>
+    <label for="no_surat">No RKS</label>
     <input type="text" class="form-control" id="no_surat" name="no_surat" value="<?=@$vno_surat?>">
   </div>
   
   <div class="form-group">
-    <label for="tanggal_surat">Tanggal Surat</label>
+    <label for="tanggal_surat">Tanggal</label>
     <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" value="<?=@$vtanggal_surat?>">
   </div>
 
   <div class="form-group">
-    <label for="tanggal_diterima">Tanggal Diterima</label>
-    <input type="date" class="form-control" id="tanggal_diterima" name="tanggal_diterima" value="<?=@$vtanggal_diterima?>">
+    <label for="tanggal_diterima">Tanggal SPK</label>
+    <input type="text" class="form-control" id="tanggal_diterima" name="tanggal_diterima" value="<?=@$vtanggal_diterima?>">
   </div>
   
   <div class="form-group">
-    <label for="perihal">Perihal</label>
+    <label for="perihal">Nama Pekerjaan</label>
     <input type="text" class="form-control" id="perihal" name="perihal" value="<?=@$vperihal?>">
   </div>
 
   <div class="form-group">
-    <label for="no_spk">no_spk</label>
+    <label for="no_spk">No SPK</label>
     <input type="text" class="form-control" id="no_spk" name="no_spk" value="<?=@$vno_spk?>">
   </div>
   

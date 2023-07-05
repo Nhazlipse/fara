@@ -45,7 +45,7 @@ include "../layout/header.php";
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="instansi.php">Data Instansi</a></li>
+                      
                       <li><a href="data-pengirim.php">Data Vendor</a></li>
                     </ul>
                   </li>
@@ -105,7 +105,10 @@ include "../layout/header.php";
         $ubah = mysqli_query($koneksi, "UPDATE tbl_pengirim_surat SET nama_pengirim ='$_POST[nama_pengirim]',
                                                                       alamat ='$_POST[alamat]',
                                                                       no_hp ='$_POST[no_hp]',
-                                                                      email ='$_POST[email]' 
+                                                                      direktur ='$_POST[direktur]',
+                                                                      akta_pendirian = '$_POST[akta_pendirian]',
+                                                                      sap_vendor = '$_POST[sap_vendor]',
+                                                                      npwp = '$_POST[npwp]'
 
                                                                       where id_pengirim_surat = '$_GET[id]' " );
 
